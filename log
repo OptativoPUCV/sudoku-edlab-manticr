@@ -1,0 +1,451 @@
+Mon Oct 12 16:45:35 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:55:33: error: implicit declaration of function ‘push_back’; did you mean ‘pushBack’? [-Werror=implicit-function-declaration]
+       for(i = 1 ; i <= 9 ; i++) push_back(list, i);
+                                 ^~~~~~~~~
+                                 pushBack
+sudoku.c:58:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) push_back(list, i);
+                       ^~
+sudoku.c:62:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:46:23 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:11: error: the comparison will always evaluate as ‘false’ for the address of ‘n’ will never be NULL [-Werror=address]
+     if(&n == 0)
+           ^~
+sudoku.c:55:48: error: passing argument 2 of ‘pushBack’ makes pointer from integer without a cast [-Werror=int-conversion]
+       for(i = 1 ; i <= 9 ; i++) pushBack(list, i);
+                                                ^
+In file included from test.c:4:0:
+list.h:23:6: note: expected ‘void *’ but argument is of type ‘int’
+ void pushBack(List* list, void* data);
+      ^~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:58:13: error: comparison between pointer and integer [-Werror]
+       if(&n == 9)
+             ^~
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= &n ; i++) pushBack(list, i);
+                       ^~
+sudoku.c:59:51: error: passing argument 2 of ‘pushBack’ makes pointer from integer without a cast [-Werror=int-conversion]
+         for(i = 0 ; i <= &n ; i++) pushBack(list, i);
+                                                   ^
+In file included from test.c:4:0:
+list.h:23:6: note: expected ‘void *’ but argument is of type ‘int’
+ void pushBack(List* list, void* data);
+      ^~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:62:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = &n ; i <= 9 ; i++)
+               ^
+sudoku.c:65:16: error: implicit declaration of function ‘pushBback’; did you mean ‘pushBack’? [-Werror=implicit-function-declaration]
+           else pushBback(list, i);
+                ^~~~~~~~~
+                pushBack
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:46:52 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:11: error: the comparison will always evaluate as ‘false’ for the address of ‘n’ will never be NULL [-Werror=address]
+     if(&n == 0)
+           ^~
+sudoku.c:58:13: error: comparison between pointer and integer [-Werror]
+       if(&n == 9)
+             ^~
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= &n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:62:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = &n ; i <= 9 ; i++)
+               ^
+sudoku.c:65:16: error: implicit declaration of function ‘pushBback’; did you mean ‘pushBack’? [-Werror=implicit-function-declaration]
+           else pushBback(list, &i);
+                ^~~~~~~~~
+                pushBack
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:47:31 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:13: error: lvalue required as unary ‘&’ operand
+     if(n == &0)
+             ^
+sudoku.c:58:15: error: lvalue required as unary ‘&’ operand
+       if(n == &9)
+               ^
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= &n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:62:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+sudoku.c:65:16: error: implicit declaration of function ‘pushBback’; did you mean ‘pushBack’? [-Werror=implicit-function-declaration]
+           else pushBback(list, &i);
+                ^~~~~~~~~
+                pushBack
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:48:40 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:58:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:62:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+sudoku.c:65:16: error: implicit declaration of function ‘pushBback’; did you mean ‘pushBack’? [-Werror=implicit-function-declaration]
+           else pushBback(list, &i);
+                ^~~~~~~~~
+                pushBack
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:49:22 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:58:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:62:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = (int *) n ; i <= 9 ; i++)
+               ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:49:39 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:58:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:62:16: error: lvalue required as left operand of assignment
+         for(&i = n ; i <= 9 ; i++)
+                ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:49:56 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:11: error: the comparison will always evaluate as ‘false’ for the address of ‘n’ will never be NULL [-Werror=address]
+     if(&n == 0)
+           ^~
+sudoku.c:58:13: error: comparison between pointer and integer [-Werror]
+       if(&n == 9)
+             ^~
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:62:16: error: lvalue required as left operand of assignment
+         for(&i = n ; i <= 9 ; i++)
+                ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:50:14 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:58:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:62:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:50:51 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:15: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+     int aux = (int *) n;
+               ^
+sudoku.c:59:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+sudoku.c:54:9: error: unused variable ‘aux’ [-Werror=unused-variable]
+     int aux = (int *) n;
+         ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:51:01 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:15: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+     int aux = &n;
+               ^
+sudoku.c:59:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+sudoku.c:54:9: error: unused variable ‘aux’ [-Werror=unused-variable]
+     int aux = &n;
+         ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:51:15 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:16: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+     int* aux = &n;
+                ^
+sudoku.c:59:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+sudoku.c:54:10: error: unused variable ‘aux’ [-Werror=unused-variable]
+     int* aux = &n;
+          ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:51:22 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:15: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+     int aux = n;
+               ^
+sudoku.c:59:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+sudoku.c:54:9: error: unused variable ‘aux’ [-Werror=unused-variable]
+     int aux = n;
+         ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:51:37 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:59:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+sudoku.c:54:11: error: unused variable ‘aux’ [-Werror=unused-variable]
+     void* aux = n;
+           ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:51:47 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:59:12: error: comparison between pointer and integer [-Werror]
+       if(n == 9)
+            ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:51:55 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:59:14: error: comparison between pointer and integer [-Werror]
+       if(aux == 9)
+              ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = n ; i <= 9 ; i++)
+               ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:52:06 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:59:14: error: comparison between pointer and integer [-Werror]
+       if(aux == 9)
+              ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= aux ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = aux ; i <= 9 ; i++)
+               ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:52:33 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:55:13: error: the comparison will always evaluate as ‘false’ for the address of ‘aux’ will never be NULL [-Werror=address]
+     if(&aux == 0)
+             ^~
+sudoku.c:59:15: error: comparison between pointer and integer [-Werror]
+       if(&aux == 9)
+               ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= aux ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = aux ; i <= 9 ; i++)
+               ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:52:43 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:59:15: error: comparison between pointer and integer [-Werror]
+       if(&aux == 9)
+               ^~
+sudoku.c:60:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= aux ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:63:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = aux ; i <= 9 ; i++)
+               ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:53:17 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:56:13: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+       for(i = 1 ; i <= 9 ; i++) pushBack(list, &i);
+             ^
+sudoku.c:56:21: error: comparison between pointer and integer [-Werror]
+       for(i = 1 ; i <= 9 ; i++) pushBack(list, &i);
+                     ^~
+sudoku.c:59:15: error: comparison between pointer and integer [-Werror]
+       if(&aux == 9)
+               ^~
+sudoku.c:63:25: error: comparison between pointer and integer [-Werror]
+         for(i = aux ; i <= 9 ; i++)
+                         ^~
+sudoku.c:65:16: error: comparison between pointer and integer [-Werror]
+           if(i == 9) i = 0;
+                ^~
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:55:57 UTC 2020: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:59:15: error: comparison between pointer and integer [-Werror]
+       if(&aux == 9)
+               ^~
+sudoku.c:60:13: error: invalid type argument of unary ‘*’ (have ‘int’)
+         for(*i = 0 ; i <= aux ; i++) pushBack(list, &i);
+             ^~
+sudoku.c:60:24: error: comparison between pointer and integer [-Werror]
+         for(*i = 0 ; i <= aux ; i++) pushBack(list, &i);
+                        ^~
+sudoku.c:63:13: error: invalid type argument of unary ‘*’ (have ‘int’)
+         for(*i = aux ; i <= 9 ; i++)
+             ^~
+sudoku.c:65:14: error: invalid type argument of unary ‘*’ (have ‘int’)
+           if(*i == 9) i = 0;
+              ^~
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 16:57:04 UTC 2020: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:11: error: the comparison will always evaluate as ‘false’ for the address of ‘n’ will never be NULL [-Werror=address]
+     if(&n == 0)
+           ^~
+sudoku.c:58:13: error: comparison between pointer and integer [-Werror]
+       if(&n == 9)
+             ^~
+sudoku.c:59:23: error: comparison between pointer and integer [-Werror]
+         for(i = 0 ; i <= &n ; i++) pushBack(list, &i);
+                       ^~
+sudoku.c:62:15: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         for(i = &n ; i <= 9 ; i++)
+               ^
+cc1: all warnings being treated as errors
+Compilation failed
+Mon Oct 12 17:02:35 UTC 2020: 
+ sudoku.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+ tests:  0|5
+total_score: 0/70
+2f54103
