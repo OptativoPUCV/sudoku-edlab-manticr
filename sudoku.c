@@ -55,7 +55,7 @@ List* get_adj_nodes(Node* n){
     {
       Node* node = copy(n);
       node = n+1;
-      printf("%p", node);
+      printf("%p\n", &node);
       pushBack(list, node);
     }
     return list;
