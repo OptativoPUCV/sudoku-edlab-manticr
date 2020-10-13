@@ -44,55 +44,23 @@ void print_node(Node* n){
 
 int is_valid(Node* n)
 {
-  int i,j;
-  //Revisar no existan numeros repetidos en filas
-  int cont = 1;
-  int repetidos = 0;
-  for( i = 0 ; i < 9 ; i++)
-    for( j = 0 ; j < 9 ; j++)
-    {
-      if(n->sudo[i][j] == cont) repetidos++;
-      if(repetidos >= 2) return 1;
-      if(j == 8)
-      {
-        cont++;
-        repetidos = 0;
-      }
-    }
-  //Revisar no existan numeros repetidos en columnas
-  cont = 1; 
-  repetidos = 0;
-  for(j = 0 ; j < 9 ; j++)
-    for(i = 0 ; i < 9 ; i++)
-    {
-      if(n->sudo[i][j] == cont) repetidos++;
-      if(repetidos >= 2) return 1;
-      if(i == 8)
-      {
-        cont++;
-        repetidos = 0;
-      }
-    }  
-  //Revisar no existan numeros repetidos en submatrices 3x3
-  cont = 1;
-  repetidos = 0;
-  for(i = 1 ; i < 10 ; i++)
+  for(int i = 0 ; i < 9 ; i++)
   {
-    int p;
-    for(p = 0 ; p < 9 ; p++)
+    for(int j = 0 ; j < 9 ; j++)
     {
-      int x = 3 * (i / 3) + (p / 3);
-      int y = 3 * (i % 3) + (p % 3);
-      if(n->sudo[x][y] == cont) repetidos++;
-      if(repetidos >= 2) return 1;
-      if(p == 8)
+      if(n->sudo[i][j] == '\0')
       {
-        cont++;
-        repetidos = 0;
+        for(int x = i+1 ; x < 9 ; x++)
+        {
+          for(int y = j+1 ; y < 9 ; y++)
+          {
+            if(n->sudo[i][j] != 0 && (n->sudo[i][j] == n->sudo[x][y] || n->sudo[i][j] == n->sudo[x][y]+(x-1)*(y-1) || n->sudo[i][j] == n->sudo[x][y]-(x-1)*(y-1))) return 0;
+          }
+        }
       }
     }
   }
-  return 0;
+  return 1;
 }
 
 
