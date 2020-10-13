@@ -70,7 +70,7 @@ int linea_valida(Node* n) //Funcion revisa que todas las lineas sean validas
 int columna_valida(Node* n)
 {
   int flag = 0;
-  int cont = 0;
+  int cont = 1;
   int repetidos;
   while(cont < 10)
   {
@@ -79,7 +79,7 @@ int columna_valida(Node* n)
       repetidos = 0;
       for(int i = 0 ; i < 9 ; i++)
       {
-        if(n->sudo[j][i] == cont) repetidos++;
+        if(n->sudo[i][j] == cont) repetidos++;
         if(repetidos >= 2)
         {
           flag = 1;
