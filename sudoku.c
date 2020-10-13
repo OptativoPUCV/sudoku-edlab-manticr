@@ -140,7 +140,7 @@ List* get_adj_nodes(Node* n)
             node->sudo[i][j] = k;
             if(is_valid(node))
             {
-              Node* adj = createNode();
+              Node* adj = copy(node);
               pushBack(list, adj);
             } 
           }
