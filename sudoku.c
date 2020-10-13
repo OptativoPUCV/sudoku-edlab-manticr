@@ -146,10 +146,10 @@ List* get_adj_nodes(Node* n)
             Node* adj = createNode();
             pushBack(list, adj);
           }
-          node->sudo[i][j] = 0;
-          return list; 
+          
         }
-        
+        n->sudo[i][j] = 0;
+          return list; 
       }    
     } 
   }
