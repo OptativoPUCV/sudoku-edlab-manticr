@@ -169,14 +169,10 @@ Node* DFS(Node* initial, int* cont){
   push(stack, initial);
   while(is_empty(stack) != 1)
   {
+    cont++;
     Node* node = top(stack);
     pop(stack);
-    if(is_final(node))
-    {
-      cont++;
-      free(node);
-      continue;
-    }
+    if(is_final(node)) return node;
 
     List* list = get_adj_nodes(node);
     Node* adj = first(list);
