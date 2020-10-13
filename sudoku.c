@@ -124,7 +124,7 @@ int is_valid(Node* n)
   b = columna_valida(n);
   c = submatriz_valida(n);
   printf("%i, %i, %i\n", a, b, c);
-  if(linea_valida(n) == 0 && columna_valida(n) == 0 && submatriz_valida(n) == 0) return 0;
+  if(a == 0 && b == 0 && c == 0) return 0;
   else return 1;
 }
 
