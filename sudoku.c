@@ -42,19 +42,73 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n)
+int linea_valida(Node* n) //Funcion revisa que todas las lineas sean validas
 {
+  int flag = 0;
+  int cont = 1;
+  int repetidos = 0;
   for(int i = 0 ; i < 9 ; i++)
-  {
     for(int j = 0 ; j < 9 ; j++)
     {
-      if(n->sudo[i][j] == '\0')
+      if(n->sudo[i][j] == cont) repetidos++;
+      if(repetidos >= 2)
       {
-      
+        flag = 1;
+        return flag;
+      }
+      if(j == 8) cont++;
+    }
+  return flag;
+}
+
+int columna_valida(Node* n)
+{
+  int flag = 0;
+  int cont = 1;
+  int repetidos = 0;
+  for(int j = 0 ; j < 9 ; j++)
+    for(int i = 0 ; i < 9 ; i++)
+    {
+      if(n->sudo[i][j] == cont) repetidos++;
+      if(repetidos >= 2)
+      {
+        flag = 1;
+        return flag;
+      }
+      if(i == 8) cont++;
+    }
+  return flag;
+}
+
+int submatriz_valida(Node* n)
+{
+  int flag = 0;
+  int k,p;
+  int cont = 0;
+  int repetidos;
+  for(k = 1 ; k < 10 ; k++)
+  {
+    cont++;
+    repetidos = 0;
+    for(p = 0 ; p < 9 ; p++)
+    {
+      int i=3*(k/3) + (p/3);
+      int j=3*(k%3) + (p%3);
+      if(n->sudo[i][j] == cont) repetidos++;
+      if(repetidos >= 2)
+      {
+        flag = 1;
+        return flag;
       }
     }
   }
-  return 1;
+  return flag;
+}
+
+int is_valid(Node* n)
+{
+  if(linea_valida(n) == 0 && columna_valida(n) == 0 && submatriz_valida(n) == 0) return 0;
+  else return 1;
 }
 
 
