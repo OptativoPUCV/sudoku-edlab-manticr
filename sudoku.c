@@ -140,8 +140,9 @@ List* get_adj_nodes(Node* n)
             if(is_valid(n))
             {
               Node* node = copy(n);
+              printf("%p", node);
               pushBack(list, node);
-            } 
+            }
           }
           n->sudo[i][j] = 0;
           return list;
