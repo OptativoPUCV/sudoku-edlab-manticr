@@ -96,24 +96,28 @@ int submatriz_valida(Node* n)
 {
   int flag = 0;
   int k,p;
-  int cont = 0;
+  int cont = 1;
   int repetidos;
-  for(k = 1 ; k < 10 ; k++)
+  while(cont < 10)
   {
-    cont++;
-    repetidos = 0;
-    for(p = 0 ; p < 9 ; p++)
+    for(k = 1 ; k < 10 ; k++)
     {
-      int i=3*(k/3) + (p/3);
-      int j=3*(k%3) + (p%3);
-      if(n->sudo[i][j] == cont) repetidos++;
-      if(repetidos >= 2)
+      repetidos = 0;
+      for(p = 0 ; p < 9 ; p++)
       {
-        flag = 1;
-        return flag;
+        int i=3*(k/3) + (p/3);
+        int j=3*(k%3) + (p%3);
+        if(n->sudo[i][j] == cont) repetidos++;
+        if(repetidos >= 2)
+        {
+          flag = 1;
+          return flag;
+        }
       }
     }
+    cont++;
   }
+
   return flag;
 }
 
