@@ -79,7 +79,7 @@ int columna_valida(Node* n)
       repetidos = 0;
       for(int i = 0 ; i < 9 ; i++)
       {
-        if(n->sudo[i][j] == cont) repetidos++;
+        if(n->sudo[j][i] == cont) repetidos++;
         if(repetidos >= 2)
         {
           flag = 1;
