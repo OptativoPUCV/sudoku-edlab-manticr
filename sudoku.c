@@ -123,7 +123,6 @@ int is_valid(Node* n)
   a = linea_valida(n);
   b = columna_valida(n);
   c = submatriz_valida(n);
-  printf("%i, %i, %i\n", a, b, c);
   if(a == 0 && b == 0 && c == 0) return 1;
   else return 0;
 }
