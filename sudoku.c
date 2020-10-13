@@ -100,7 +100,7 @@ int submatriz_valida(Node* n)
   int repetidos;
   while(cont < 10)
   {
-    for(k = 1 ; k < 10 ; k++)
+    for(k = 0 ; k < 9 ; k++)
     {
       repetidos = 0;
       for(p = 0 ; p < 9 ; p++)
