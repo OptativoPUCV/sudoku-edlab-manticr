@@ -54,7 +54,7 @@ int is_valid(Node* n)
         {
           for(int y = j+1 ; y < 9 ; y++)
           {
-            if(n->sudo[i][j] != 0 && (n->sudo[i][j] == n->sudo[x][y] || n->sudo[i][j] == n->sudo[x][y]+(x-1)+(y-1) || n->sudo[i][j] == n->sudo[x][y]-(x-1)-(y-1))) return 0;
+            if(n->sudo[i][j] != 0 && (n->sudo[i][j] == n->sudo[x][y] || n->sudo[i][j] == n->sudo[x][y]+(x-1)*(y-1) || n->sudo[i][j] == n->sudo[x][y]-(x-1)*(y-1))) return 0;
           }
         }
       }
