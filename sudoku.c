@@ -135,26 +135,22 @@ List* get_adj_nodes(Node* n)
   {
     for(int j = 0 ; j < 9 ; j++)
     {
-        if(n->sudo[i][j] == 0)
+      if(n->sudo[i][j] == '\0')
+      {
+        for(int k = 1 ; k < 10 ; k++)
         {
-          for(int k = 1 ; k < 10 ; k++)
+          n->sudo[i][j] = k;
+          if(is_valid(n))
           {
-            n->sudo[i][j] = k;
-            if(is_valid(n))
-            {
-              Node* adj = createNode();
-              pushBack(list, adj);
-            }
+            Node* adj = createNode();
+            pushBack(list, adj);
           }
-          n->sudo[i][j] = 0;
-        return list; 
         }
-        
-    }
-
-        
+        n->sudo[i][j] = 0;
+        return list; 
+      }    
+    } 
   }
-
   return list;
 }
 
