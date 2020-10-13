@@ -81,8 +81,8 @@ int is_valid(Node* n)
     int p;
     for(p = 0 ; p < 9 ; p++)
     {
-      int x = 3 * (x / 3) + (p / 3);
-      int y = 3 * (y % 3) + (p % 3);
+      int x = 3 * (i / 3) + (p / 3);
+      int y = 3 * (i % 3) + (p % 3);
       if(n->sudo[x][y] == cont) repetidos++;
       if(repetidos >= 2) return 1;
       if(p == 8)
