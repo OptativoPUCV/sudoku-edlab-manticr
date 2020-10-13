@@ -45,21 +45,24 @@ void print_node(Node* n){
 int linea_valida(Node* n) //Funcion revisa que todas las lineas sean validas
 {
   int flag = 0;
-  int cont = 0;
+  int cont = 1;
   int repetidos;
-  for(int i = 0 ; i < 9 ; i++)
+  while(cont < 10)
   {
-    cont++;
-    repetidos = 0;
-    for(int j = 0 ; j < 9 ; j++)
+    for(int i = 0 ; i < 9 ; i++)
     {
-      if(n->sudo[i][j] == cont) repetidos++;
-      if(repetidos >= 2)
+      repetidos = 0;
+      for(int j = 0 ; j < 9 ; j++)
       {
-        flag = 1;
-        return flag;
+        if(n->sudo[i][j] == cont) repetidos++;
+        if(repetidos >= 2)
+        {
+          flag = 1;
+          return flag;
+        }
       }
     }
+    cont++;
   }
   return flag;
 }
