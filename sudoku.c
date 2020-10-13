@@ -144,7 +144,6 @@ List* get_adj_nodes(Node* n)
             if(is_valid(n))
             {
               Node* node = copy(n);
-              printf("%i\n", k);
               pushBack(list, node);
             }
           }
