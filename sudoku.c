@@ -45,9 +45,12 @@ void print_node(Node* n){
 int linea_valida(Node* n) //Funcion revisa que todas las lineas sean validas
 {
   int flag = 0;
-  int cont = 1;
-  int repetidos = 0;
+  int cont = 0;
+  int repetidos;
   for(int i = 0 ; i < 9 ; i++)
+  {
+    cont++;
+    repetidos = 0;
     for(int j = 0 ; j < 9 ; j++)
     {
       if(n->sudo[i][j] == cont) repetidos++;
@@ -56,8 +59,8 @@ int linea_valida(Node* n) //Funcion revisa que todas las lineas sean validas
         flag = 1;
         return flag;
       }
-      if(j == 8) cont++;
     }
+  }
   return flag;
 }
 
@@ -66,21 +69,20 @@ int columna_valida(Node* n)
   int flag = 0;
   int cont = 0;
   int repetidos;
-    for(int j = 0 ; j < 9 ; j++)
+  for(int j = 0 ; j < 9 ; j++)
+  {
+    cont++;
+    repetidos = 0;
+    for(int i = 0 ; i < 9 ; i++)
     {
-      cont++;
-      repetidos = 0;
-      for(int i = 0 ; i < 9 ; i++)
+      if(n->sudo[i][j] == cont) repetidos++;
+      if(repetidos >= 2)
       {
-        if(n->sudo[i][j] == cont) repetidos++;
-        if(repetidos >= 2)
-        {
-          flag = 1;
-          return flag;
-        }
+        flag = 1;
+        return flag;
       }
     }
-
+  }
   return flag;
 }
 
