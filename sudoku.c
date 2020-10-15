@@ -177,7 +177,7 @@ Node* DFS(Node* initial, int* cont){
     List* list = get_adj_nodes(node);
     Node* adj = first(list);
 
-    while(adj)
+    while(adj != NULL)
     {
       push(stack, adj);
       adj = next(list);
